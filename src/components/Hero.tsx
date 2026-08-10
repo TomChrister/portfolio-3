@@ -1,3 +1,5 @@
+import { ArrowRight, Briefcase, MapPin, Wrench } from "lucide-react";
+
 export default function Hero() {
   return (
     <div className="mx-auto max-w-[900px] px-6 pb-10 pt-16">
@@ -50,24 +52,31 @@ export default function Hero() {
 
           <p className="ml-0 mt-2 text-[17.5px] text-muted sm:ml-10">
             Building interfaces with <b className="font-semibold text-ink">React</b> &amp;{" "}
-            <b className="font-semibold text-ink">TypeScript</b> — and keeping large-scale{" "}
+            <b className="font-semibold text-ink">TypeScript</b> , and keeping large-scale{" "}
             <b className="font-semibold text-ink">Sitecore</b> /{" "}
             <b className="font-semibold text-ink">Dynamics 365</b> web platforms running underneath them.
           </p>
 
           <div className="ml-0 mt-6 flex flex-wrap gap-x-6 gap-y-2.5 font-mono text-[12.5px] text-muted sm:ml-10">
-            <span>
-              📍 <em className="not-italic text-accent">Oslo, Norway</em>
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="h-[14px] w-[14px] flex-shrink-0 text-[#F5716C]" aria-hidden="true" />
+              <em className="not-italic text-accent">Oslo, Norway</em>
             </span>
-            <span>
-              💼 <em className="not-italic text-accent">Web Editor &amp; Support Specialist</em> @
-              SoftwareOne
+            <span className="inline-flex items-center gap-1.5">
+              <Briefcase className="h-[14px] w-[14px] flex-shrink-0 text-[#F5C15E]" aria-hidden="true" />
+              <span>
+                <em className="not-italic text-accent">Web Editor &amp; Support Specialist</em> @
+                SoftwareOne
+              </span>
             </span>
-            <span>
-              <a href='http://webloftet.no' target='_blank'>
-                🛠️ <em className="not-italic text-accent">Webloftet.no</em>
-              </a>
-              — independent studio
+            <span className="inline-flex items-center gap-1.5">
+              <Wrench className="h-[14px] w-[14px] flex-shrink-0 text-[#6FE39A]" aria-hidden="true" />
+              <span>
+                <a href="https://webloftet.no" target="_blank" rel="noreferrer">
+                  <em className="not-italic text-accent">Webloftet.no</em>
+                </a>
+                {" — independent studio"}
+              </span>
             </span>
           </div>
 
@@ -76,7 +85,8 @@ export default function Hero() {
               href="#projects"
               className="inline-flex items-center gap-2 rounded-md border border-accent bg-accent px-[18px] py-2.5 font-mono text-[12.5px] font-semibold text-[#08221D] transition-transform hover:-translate-y-px"
             >
-              View projects →
+              View projects
+              <ArrowRight className="h-[14px] w-[14px]" aria-hidden="true" />
             </a>
             <a
               href="#contact"

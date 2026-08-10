@@ -26,7 +26,7 @@ export default function TechStack() {
           </div>
           <h2 className="mb-2.5 text-[26px] font-extrabold tracking-tight text-ink">What I build with</h2>
           <p className="mb-8 max-w-[560px] text-[17px] text-muted">
-            Split across two registries — the tools I ship product with, and the platforms I keep
+            Split across two registries, the tools I ship product with, and the platforms I keep
             enterprise web running on.
           </p>
 
@@ -37,7 +37,7 @@ export default function TechStack() {
             ))}
           </div>
 
-          <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-muted">platforms</h3>
+          <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-muted">ecosystem</h3>
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-[10px] border border-border bg-border sm:grid-cols-3">
             {platformStack.map((item) => (
                 <StackCell key={item.name} item={item} />

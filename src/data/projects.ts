@@ -32,8 +32,8 @@ export const projects: Project[] = [
     title: "Planbase",
     description:
       "AI-powered planning assistant with a kanban interface for daily and project-level task flow.",
-    tags: ["React", "TypeScript", "Claude Sonnet 4.6 API"],
-    tech: ["React", "TypeScript", "Tailwind", "Vite", "Claude Sonnet 4.6 API", "Vercel"],
+    tags: ["React", "TypeScript","Tailwind CSS", "Claude Sonnet 4.6 API"],
+    tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Vercel", "React Router"],
     image: "/images/planbase.png",
     heroImage: "/images/planbase.png",
     liveUrl: "https://planbase-agent.vercel.app/",
@@ -60,8 +60,8 @@ _Paste the real project README here to replace this placeholder copy._`,
     title: "Webloftet.no",
     description:
       "Web design & development studio for SMB clients — from Figma prototype to production build.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    tech: ["React", "TypeScript", "Tailwind", "Vite", "Figma", "Vercel"],
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "React Router", "Firebase", "Figma", "Vercel"],
     image: "/images/webloftet.png",
     heroImage: "/images/webloftet.png",
     liveUrl: "https://webloftet.no",
@@ -88,7 +88,7 @@ _Paste the real project README here to replace this placeholder copy._`,
     tech: ["React", "TypeScript", "Tailwind", "Figma", "Noroff API"],
     image: "/images/holidaze.png",
     heroImage: "/images/holidaze.png",
-    liveUrl: "#",
+    liveUrl: "https://holidaze-eta.vercel.app/",
     readme: `# Holidaze
 
 An accommodation booking platform with two distinct experiences: a customer-facing
@@ -104,15 +104,39 @@ implementation.
 _Paste the real project README here to replace this placeholder copy._`,
   },
   {
+    slug: "babyens utvikling",
+    title: "Babyens utvikling",
+    description:
+      "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
+    tags: ["React", "Vite"],
+    tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
+    image: "/images/babyens-utvikling.png",
+    heroImage: "/images/babyens-utvikling.png",
+    liveUrl: "https://marka-demo.vercel.app/",
+    readme: `# Babyens utvikling
+
+Baby Development Tracker — A React + TypeScript SPA that calculates your baby's current week 
+from their birth date and surfaces week-by-week milestones, 
+tips, and safe-sleep guidance (based on CDC and Norwegian health-authority sources).
+
+## Highlights
+
+- **i18n** localisation across the catalogue and checkout
+- Region-aware product presentation
+- A reference architecture for multilingual storefronts
+
+_Paste the real project README here to replace this placeholder copy._`,
+  },
+  {
     slug: "marka",
     title: "MARKA",
     description:
-      "Multilingual e-commerce reference build exploring localized product catalogues and checkout flows.",
+        "Multilingual e-commerce reference build exploring localized product catalogues and checkout flows.",
     tags: ["React", "i18n"],
     tech: ["React", "TypeScript", "i18n", "Tailwind"],
     image: "/images/marka.png",
     heroImage: "/images/marka.png",
-    liveUrl: "#",
+    liveUrl: "https://marka-demo.vercel.app/",
     readme: `# MARKA
 
 A multilingual e-commerce reference build exploring localized product catalogues
@@ -125,7 +149,7 @@ and checkout flows across languages and regions.
 - A reference architecture for multilingual storefronts
 
 _Paste the real project README here to replace this placeholder copy._`,
-  },
+  }
 ];
 
 export function getProject(slug: string): Project | undefined {
