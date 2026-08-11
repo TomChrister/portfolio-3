@@ -1,3 +1,4 @@
+
 export interface Project {
   /** URL-safe id used for the detail route: /projects/:slug */
   slug: string;
@@ -31,29 +32,58 @@ export const projects: Project[] = [
     slug: "planbase",
     title: "Planbase",
     description:
-      "AI-powered planning assistant with a kanban interface for daily and project-level task flow.",
+        "AI-powered planning assistant with a kanban interface for daily and project-level task flow.",
     tags: ["React", "TypeScript","Tailwind CSS", "Claude Sonnet 4.6 API"],
     tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Vercel", "React Router"],
     image: "/images/planbase.png",
     heroImage: "/images/planbase.png",
     liveUrl: "https://planbase-agent.vercel.app/",
-    readme: `# Planbase
+    readme: `# Planbase — AI Task Orchestrator
 
-An AI-powered planning assistant that turns loose intentions into an organised
-kanban board. Describe what you want to get done and Planbase drafts the tasks,
-groups them, and slots them onto daily and project-level lanes.
+Give Planbase a goal and a **Planner Agent** (powered by Claude) breaks it down into concrete, self-contained subtasks. The tasks appear as cards on a kanban board (To Do / In Progress / Done), where you can move, edit, add, and delete them — or ask a **Revise Agent** to reshape the plan in natural language.
 
-## Highlights
+## Tech stack
 
-- **Conversational planning** — powered by the Claude Sonnet 4.6 API.
-- **Kanban flow** for daily and project-level work.
-- **Drag-and-drop** task management with a fast, keyboard-friendly UI.
+- **Frontend** — React 19 + Vite 8
+- **Styling** — Tailwind CSS 4 + CSS design tokens
+- **AI** — Anthropic Claude via \`@anthropic-ai/sdk\` (model \`claude-sonnet-4-6\`)
+- **Backend (local)** — Express 5 (\`server.js\`)
+- **Backend (production)** — Vercel serverless functions (\`api/\`)
+- **State** — React state + \`localStorage\` persistence
+- **Linting** — ESLint 10
 
-## Stack
+There is no separate state library — plan state lives in \`App.jsx\` and is persisted to \`localStorage\` so a plan survives page reloads.
 
-Built with React, TypeScript and Tailwind, bundled by Vite and deployed on Vercel.
+## How the app works
 
-_Paste the real project README here to replace this placeholder copy._`,
+### User flow
+
+- Enter a goal on the landing screen (e.g. "Plan a small launch event")
+- The frontend sends the goal to \`/api/planner\`. A loading screen shows a rotating status and skeleton board.
+- The Planner Agent returns up to 5 subtasks, which render as cards — all starting in **To Do**.
+- Cards can be opened for editing, added manually, or moved between columns.
+- Revising the plan: type an instruction in the revise bar. The Revise Agent returns a minimal set of add/update/remove changes, shown in a preview before you apply or discard them. Limited to 5 revisions per plan.
+
+### The two agents
+
+Both agents live in the backend and respond with JSON only.
+
+- **Planner Agent** (\`/api/planner\`) — takes a goal, returns a short summary and a list of tasks.
+- **Revise Agent** (\`/api/revise\`) — takes the goal, current tasks and an instruction, returns tasks to add, update or remove.
+
+### Frontend & backend
+
+The frontend always calls relative paths (\`/api/planner\`, \`/api/revise\`). In local development, Vite proxies these to an Express server. In production on Vercel, they're served by serverless functions. Both implementations share the same prompts and behaviour.
+
+## Responsive behaviour
+
+- On phones, the three kanban columns stack vertically and are collapsible.
+- **To Do** is open by default; **In Progress** and **Done** start collapsed but show their task count, and auto-expand when a new card lands in them.
+- On desktop, the columns are shown side by side.
+
+## Roadmap
+
+MVP scope is the Planner and Revise agents with sequential, client-side task movement. A **Worker Agent** and **Reviewer Agent** are planned next.`,
   },
   {
     slug: "webloftet",
@@ -65,19 +95,33 @@ _Paste the real project README here to replace this placeholder copy._`,
     image: "/images/webloftet.png",
     heroImage: "/images/webloftet.png",
     liveUrl: "https://webloftet.no",
-    readme: `# Webloftet.no
+    readme: `# Webloftet
 
-An independent web design & development studio serving small and medium-sized
-businesses. Every project runs from a Figma prototype through to a production
-React build.
+Webloftet is the marketing website for a Norwegian web agency. It presents the agency's services and packages, showcases past projects, answers FAQs, and lets prospective clients get in touch through a contact form. It also includes a Firebase-backed blog with a password-protected admin area for creating and editing articles.
 
-## What it covers
+The site is a single-page application and the content is in Norwegian.
 
-- Discovery & UX prototyping in Figma
-- Production front-end builds in React + TypeScript
-- Hosting, deployment and ongoing maintenance
+## Features
 
-_Paste the real project README here to replace this placeholder copy._`,
+- **Marketing pages** — Home, Services (\`/tjenester\`), About (\`/om-oss\`), Projects (\`/prosjekter\`) and FAQ (\`/faq\`).
+- **Contact form** — Sends enquiries by email via EmailJS, with toast notifications for feedback.
+- **Blog** — Individual articles served from Firestore at \`/blogg/:slug\`.
+- **Admin area** — Password-protected login and dashboard for creating, editing and deleting articles, backed by Firebase Authentication.
+- **Rich-text editing** — Articles are authored with the MDX editor and rendered from Markdown (sanitized with DOMPurify).
+
+## Tech stack
+
+- **Frontend** — React 19 + Vite + TypeScript
+- **Styling** — Tailwind CSS + \`@tailwindcss/typography\`
+- **Routing** — React Router
+- **Backend / DB** — Firebase (Firestore, Authentication, Storage, App Check with reCAPTCHA v3)
+- **Email** — EmailJS for contact-form delivery
+- **Editor** — \`@mdxeditor/editor\`, \`marked\`, \`dompurify\`
+- **Animation & icons** — Framer Motion, React Icons, Lucide
+
+## How it works
+
+The public marketing pages and the blog live under one SPA. Blog articles are stored in Firestore and rendered from sanitized Markdown. Behind a Firebase-authenticated login, an admin dashboard lets the agency create, edit and delete articles with the MDX editor — no redeploy needed to publish new content.`,
   },
   {
     slug: "holidaze",
@@ -89,19 +133,34 @@ _Paste the real project README here to replace this placeholder copy._`,
     image: "/images/holidaze.png",
     heroImage: "/images/holidaze.png",
     liveUrl: "https://holidaze-eta.vercel.app/",
-    readme: `# Holidaze
+    readme: `# Holidaze — Accommodation Booking Front-End
 
-An accommodation booking platform with two distinct experiences: a customer-facing
-booking flow and an admin dashboard for venue managers. Designed in Figma before
-implementation.
+Holidaze is a modern front-end application for an accommodation booking site. Users can browse and book venues for holidays, and register as venue managers to manage listings and bookings. It's built on the official Holidaze API and designed in Figma before implementation.
 
-## Highlights
+## User types
 
-- Separate **customer** and **admin** experiences
-- Venue search, availability and booking management
-- Figma-first design process
+- **Visitor** — not logged in; can browse and search venues and view availability calendars
+- **Customer** — registered and logged in; can create and view bookings and update their profile
+- **Venue Manager** — registered and logged in; can create, edit and delete venues and view their bookings
 
-_Paste the real project README here to replace this placeholder copy._`,
+## Features
+
+- Browse, search and view a list of venues, plus a detail page per venue
+- Register with a \`stud.noroff.no\` email as a customer or venue manager
+- Availability calendar showing booked and open dates
+- **Customers** — login/logout, create and view upcoming bookings, update avatar
+- **Venue Managers** — login/logout, manage their own venues, view venue bookings, update avatar
+
+## Tech stack
+
+- **Frontend** — React + Vite + TypeScript
+- **Styling** — Tailwind CSS
+- **Data** — Holidaze (Noroff) API
+- **Design** — Figma design system
+
+## How it works
+
+The app splits into a customer-facing booking flow and an admin-facing dashboard for venue managers, both driven by the Holidaze API. Authentication is scoped to \`stud.noroff.no\` accounts, and the same registration flow lets a user sign up as either a customer or a venue manager.`,
   },
   {
     slug: "babyens utvikling",
@@ -112,22 +171,33 @@ _Paste the real project README here to replace this placeholder copy._`,
     tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
     image: "/images/babyens-utvikling.png",
     heroImage: "/images/babyens-utvikling.png",
-    liveUrl: "https://marka-demo.vercel.app/",
-    readme: `# Babyens utvikling
+    liveUrl: "https://babyens-utvikling.vercel.app/",
+    readme: `# Babyens utvikling — week by week 👶
 
-Baby Development Tracker — A React + TypeScript SPA that calculates your baby's current week 
-from their birth date and surfaces week-by-week milestones, 
-tips, and safe-sleep guidance (based on CDC and Norwegian health-authority sources).
+A small website that shows a child's development week by week through the whole first year (weeks 1–52). You enter the baby's birth date and the site automatically opens on the right week — with the option to page back and forth. Built with **Vite + React + TypeScript + Tailwind CSS + React Router**.
 
+The page content is in Norwegian.
 
+## How it works
 
-## Highlights
+- **The front page** asks for the baby's birth date, or lets you skip and page manually from week 1. The date is stored only locally in the browser (\`localStorage\`) — nothing is sent anywhere.
+- Once a date is set, the current week of life is calculated and you're taken straight to \`/uke/<n>\`.
+- **Move between weeks** with the buttons, the arrow keys \`←\` / \`→\`, or by swiping on mobile.
+- Each week shows the developmental phase, a summary, typical focus areas, a tip, and — on selected weeks — official milestones and what happens at the health clinic.
+- **The sleep page** (\`/sovn\`) is a separate reference for the whole first year: safe sleep environment, techniques, sleep across the year, sleep regressions, and an overview of sleep methods with age limits.
 
-- **i18n** localisation across the catalogue and checkout
-- Region-aware product presentation
-- A reference architecture for multilingual storefronts
+## Content & structure
 
-_Paste the real project README here to replace this placeholder copy._`,
+- All text content for the 52 weeks lives in \`src/data/weeks.ts\` as a list of \`WeekData\` objects (week, phase, summary, focus, tip, milestones, and health-clinic notes).
+- The sleep content lives in \`src/data/sleep.ts\`.
+- The four developmental areas (\`social\`, \`sprak\`, \`kognitivt\`, \`motorikk\`) each have their own color, defined in \`tailwind.config.js\`.
+
+## Sources
+
+- **Milestones** — adapted from CDC "Learn the Signs. Act Early."
+- **Health clinic** — the Norwegian Directorate of Health's child health-clinic programme (ages 0–5).
+
+Normal variation is wide, and children mature at different rates. This is general information, **not medical advice**.`,
   },
   {
     slug: "marka",
@@ -139,18 +209,33 @@ _Paste the real project README here to replace this placeholder copy._`,
     image: "/images/marka.png",
     heroImage: "/images/marka.png",
     liveUrl: "https://marka-demo.vercel.app/",
-    readme: `# MARKA
+    readme: `# Marka
 
-A multilingual e-commerce reference build exploring localized product catalogues
-and checkout flows across languages and regions.
+A demo e-commerce website for a Norwegian natural-products brand — honey, foraged goods, and wild ingredients from the Norwegian outdoors (*marka*). Built as a single-page application with a shop, product pages, a wishlist, a cart, and an editorial magazine section.
 
-## Highlights
+The page content is in Norwegian.
 
-- **i18n** localisation across the catalogue and checkout
-- Region-aware product presentation
-- A reference architecture for multilingual storefronts
+## Features
 
-_Paste the real project README here to replace this placeholder copy._`,
+- **Storefront** — landing page, shop listing, category browsing, and product detail pages
+- **Cart** — add products with a chosen quantity, a slide-out cart drawer, and a checkout page
+- **Wishlist** — save favourite products via a heart button, with a counter and slide-out drawer in the top banner
+- **Magazine** — read articles and write new ones
+- **Search** — searchable overlay from the navbar
+- **Responsive** — mobile-first layout with a collapsible menu
+- **SPA routing** — deep links resolve on refresh (configured for Vercel)
+
+## Tech stack
+
+- **Frontend** — React 19 + Vite 6 + TypeScript
+- **Styling** — Tailwind CSS v4 (via \`@tailwindcss/vite\`; theme in \`src/index.css\`)
+- **Routing** — React Router v7
+- **State** — Zustand for cart, wishlist and articles
+- **Icons** — \`lucide-react\`
+
+## How it works
+
+Global state for the cart, wishlist and articles lives in a single Zustand store, held in memory and reset on page reload. Deployed on Vercel, where \`vercel.json\` rewrites all requests to \`index.html\` so client-side routes resolve correctly on refresh or a direct link.`,
   }
 ];
 
