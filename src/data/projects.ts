@@ -84,8 +84,8 @@ _Paste the real project README here to replace this placeholder copy._`,
     title: "Holidaze",
     description:
       "Accommodation booking platform with separate customer & admin experiences, prototyped in Figma first.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    tech: ["React", "TypeScript", "Tailwind", "Figma", "Noroff API"],
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Figma", "Noroff API"],
     image: "/images/holidaze.png",
     heroImage: "/images/holidaze.png",
     liveUrl: "https://holidaze-eta.vercel.app/",
@@ -108,7 +108,7 @@ _Paste the real project README here to replace this placeholder copy._`,
     title: "Babyens utvikling",
     description:
       "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
-    tags: ["React", "Vite"],
+    tags: ["React", "TypeScript", "Tailwind CSS"],
     tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
     image: "/images/babyens-utvikling.png",
     heroImage: "/images/babyens-utvikling.png",
@@ -118,6 +118,8 @@ _Paste the real project README here to replace this placeholder copy._`,
 Baby Development Tracker — A React + TypeScript SPA that calculates your baby's current week 
 from their birth date and surfaces week-by-week milestones, 
 tips, and safe-sleep guidance (based on CDC and Norwegian health-authority sources).
+
+
 
 ## Highlights
 
