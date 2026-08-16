@@ -40,6 +40,9 @@ export const platformStack: StackItem[] = [
 // Extra logos for technologies used on individual projects that aren't part of
 // the two stack registries above.
 const extraLogos: Record<string, string> = {
+  "next.js": "https://cdn.simpleicons.org/nextdotjs/5EEAD4",
+  "nextjs": "https://cdn.simpleicons.org/nextdotjs/5EEAD4",
+  "zod": "https://cdn.simpleicons.org/zod/408AFF",
   "claude sonnet 4.6 api": "https://cdn.simpleicons.org/anthropic/D97757",
   "claude": "https://cdn.simpleicons.org/anthropic/D97757",
   "tailwind": "https://cdn.simpleicons.org/tailwindcss/5EEAD4",

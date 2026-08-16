@@ -87,6 +87,79 @@ The frontend always calls relative paths (\`/api/planner\`, \`/api/revise\`). In
 MVP scope is the Planner and Revise agents with sequential, client-side task movement. A **Worker Agent** and **Reviewer Agent** are planned next.`,
   },
   {
+    slug: "jobbsoknadsassistent",
+    title: "Jobbsøknadsassistent",
+    description:
+        "Extracts structured details from a job posting, then drafts and refines a tailored cover letter through chat.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel AI SDK", "Claude Sonnet 4.6 API", "Zod", "Vercel"],
+    image: "/images/jobbsoknadsassistent.png",
+    heroImage: "/images/jobbsoknadsassistent.png",
+    liveUrl: "https://jobbsoknadsassistent.vercel.app",
+    repoUrl: "https://github.com/TomChrister/llm-project",
+    readme: `# Jobbsøknadsassistent — Job Application Assistant
+
+Paste a job posting, as a URL or as plain text, and get its details pulled out into a structured card — role, company, skills, responsibilities. From there an AI assistant drafts a cover letter tailored to the posting and refines it through chat.
+
+## Features
+
+- **Input** — paste a job posting URL or its raw text, or click one of the built-in fictional examples to try it without hunting down a real posting.
+- **Extraction** — URLs are fetched server-side and stripped of nav/footer/ad noise with [Readability](https://github.com/mozilla/readability), then sent to Claude with a Zod schema. The structured result streams into the UI field by field.
+- **Details card** — title, company, location, employment type, seniority, required and nice-to-have skills, and responsibilities, rendered with skill tags.
+- **Chat** — the assistant opens with a draft cover letter and offers quick actions ("Make more formal", "Make shorter", "Highlight a skill") alongside free-form chat.
+- **History** — every extraction is saved to \`localStorage\` with its full chat thread and listed in the sidebar, so you can switch back to a past job without losing earlier work.
+
+## Tech stack
+
+- **Frontend** — Next.js (App Router) + TypeScript
+- **Styling** — Tailwind CSS v4
+- **AI** — [Vercel AI SDK](https://ai-sdk.dev) with the Anthropic provider (\`streamObject\` for extraction, \`streamText\` for chat)
+- **Schema** — [Zod](https://zod.dev) for the extraction schema
+- **Scraping** — \`@mozilla/readability\` + \`jsdom\` for server-side URL fetching
+
+## How it works
+
+The extracted job data is sent as system context with every chat request, so the posting stays available for the whole conversation — the assistant can keep rewriting against the original requirements instead of only the previous draft. Extractions and their chat threads persist in \`localStorage\`, so starting a new extraction never discards an earlier one.`,
+  },
+  {
+    slug: "babyens utvikling",
+    title: "Babyens utvikling",
+    description:
+        "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
+    image: "/images/babyens-utvikling.png",
+    heroImage: "/images/babyens-utvikling.png",
+    liveUrl: "https://babyens-utvikling.vercel.app/",
+    repoUrl: "https://github.com/tomchrister/babyens-utvikling",
+    readme: `# Babyens utvikling — week by week 👶
+
+A small website that shows a child's development week by week through the whole first year (weeks 1–52). You enter the baby's birthdate and the site automatically opens on the right week — with the option to page back and forth. Built with **Vite + React + TypeScript + Tailwind CSS + React Router**.
+
+The page content is in Norwegian.
+
+## How it works
+
+- **The front page** asks for the baby's birthdate, or lets you skip and page manually from week 1. The date is stored only locally in the browser (\`localStorage\`) — nothing is sent anywhere.
+- Once a date is set, the current week of life is calculated and you're taken straight to \`/uke/<n>\`.
+- **Move between weeks** with the buttons, the arrow keys \`←\` / \`→\`, or by swiping on mobile.
+- Each week shows the developmental phase, a summary, typical focus areas, a tip, and — on selected weeks — official milestones and what happens at the health clinic.
+- **The sleep page** (\`/sovn\`) is a separate reference for the whole first year: safe sleep environment, techniques, sleep across the year, sleep regressions, and an overview of sleep methods with age limits.
+
+## Content & structure
+
+- All text content for the 52 weeks lives in \`src/data/weeks.ts\` as a list of \`WeekData\` objects (week, phase, summary, focus, tip, milestones, and health-clinic notes).
+- The sleep content lives in \`src/data/sleep.ts\`.
+- The four developmental areas (\`social\`, \`sprak\`, \`kognitivt\`, \`motorikk\`) each have their own color, defined in \`tailwind.config.js\`.
+
+## Sources
+
+- **Milestones** — adapted from CDC "Learn the Signs. Act Early."
+- **Health clinic** — the Norwegian Directorate of Health's child health-clinic programme (ages 0–5).
+
+Normal variation is wide, and children mature at different rates. This is general information, **not medical advice**.`,
+  },
+  {
     slug: "webloftet",
     title: "Webloftet.no",
     description:
@@ -163,44 +236,6 @@ Holidaze is a modern front-end application for an accommodation booking site. Us
 ## How it works
 
 The app splits into a customer-facing booking flow and an admin-facing dashboard for venue managers, both driven by the Holidaze API. Authentication is scoped to \`stud.noroff.no\` accounts, and the same registration flow lets a user sign up as either a customer or a venue manager.`,
-  },
-  {
-    slug: "babyens utvikling",
-    title: "Babyens utvikling",
-    description:
-      "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
-    image: "/images/babyens-utvikling.png",
-    heroImage: "/images/babyens-utvikling.png",
-    liveUrl: "https://babyens-utvikling.vercel.app/",
-    repoUrl: "https://github.com/tomchrister/babyens-utvikling",
-    readme: `# Babyens utvikling — week by week 👶
-
-A small website that shows a child's development week by week through the whole first year (weeks 1–52). You enter the baby's birth date and the site automatically opens on the right week — with the option to page back and forth. Built with **Vite + React + TypeScript + Tailwind CSS + React Router**.
-
-The page content is in Norwegian.
-
-## How it works
-
-- **The front page** asks for the baby's birth date, or lets you skip and page manually from week 1. The date is stored only locally in the browser (\`localStorage\`) — nothing is sent anywhere.
-- Once a date is set, the current week of life is calculated and you're taken straight to \`/uke/<n>\`.
-- **Move between weeks** with the buttons, the arrow keys \`←\` / \`→\`, or by swiping on mobile.
-- Each week shows the developmental phase, a summary, typical focus areas, a tip, and — on selected weeks — official milestones and what happens at the health clinic.
-- **The sleep page** (\`/sovn\`) is a separate reference for the whole first year: safe sleep environment, techniques, sleep across the year, sleep regressions, and an overview of sleep methods with age limits.
-
-## Content & structure
-
-- All text content for the 52 weeks lives in \`src/data/weeks.ts\` as a list of \`WeekData\` objects (week, phase, summary, focus, tip, milestones, and health-clinic notes).
-- The sleep content lives in \`src/data/sleep.ts\`.
-- The four developmental areas (\`social\`, \`sprak\`, \`kognitivt\`, \`motorikk\`) each have their own color, defined in \`tailwind.config.js\`.
-
-## Sources
-
-- **Milestones** — adapted from CDC "Learn the Signs. Act Early."
-- **Health clinic** — the Norwegian Directorate of Health's child health-clinic programme (ages 0–5).
-
-Normal variation is wide, and children mature at different rates. This is general information, **not medical advice**.`,
   },
   {
     slug: "marka",
