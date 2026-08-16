@@ -19,21 +19,21 @@ export const productStack: StackItem[] = [
   { name: "Vite", logo: "https://cdn.simpleicons.org/vite/F5B759", description: "Build tooling & dev server" },
   { name: "Cypress", logo: "https://cdn.simpleicons.org/cypress/F5B759", description: "End-to-end testing" },
   { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase/F5B759", description: "Auth, Firestore, Storage" },
-  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/5EEAD4", description: "UX prototyping & design" },
   { name: "Claude Code", logo: "https://cdn.simpleicons.org/claudecode/D97757", description: "AI-assisted development" },
+  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/5EEAD4", description: "UX prototyping & design" },
 ];
 
 export const platformStack: StackItem[] = [
   { name: "Git", logo: "https://cdn.simpleicons.org/git/5EEAD4", description: "Version control" },
   { name: "GitHub", logo: "https://cdn.simpleicons.org/github/F5B759", description: "Repos, PRs, collaboration" },
   { name: "npm", logo: "https://cdn.simpleicons.org/npm/5EEAD4", description: "Package management" },
-  { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/5EEAD4", description: "Hosting & deployment" },
+  { name: "Node.js", logo: "https://cdn.simpleicons.org/node.js/5FA04E", description: "Backend & server" },
   { name: "React Router", logo: "https://cdn.simpleicons.org/reactrouter/CA4245", description: "Routing & navigation" },
+  { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/5EEAD4", description: "Hosting & deployment" },
   { name: "Sitecore CMS", logo: "https://cdn.simpleicons.org/sitecore/EB1F1F", description: "Global web production" },
   { name: "EPiServer CMS", logo: "/logos/episerver.svg", description: "Global web production" },
   { name: "Dynamics 365", logo: "/logos/d365.svg", description: "Marketing automation" },
   { name: "GA4", logo: "https://cdn.simpleicons.org/googleanalytics/F5B759", description: "Analytics & reporting" },
-  { name: "SEMrush", logo: "https://cdn.simpleicons.org/semrush/5EEAD4", description: "SEO tooling" },
   { name: "Jira", logo: "https://cdn.simpleicons.org/jira/F5B759", description: "Ticket & project coordination" },
 ];
 

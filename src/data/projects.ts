@@ -38,6 +38,7 @@ export const projects: Project[] = [
     image: "/images/planbase.png",
     heroImage: "/images/planbase.png",
     liveUrl: "https://planbase-agent.vercel.app/",
+    repoUrl: "https://github.com/tomchrister/",
     readme: `# Planbase — AI Task Orchestrator
 
 Give Planbase a goal and a **Planner Agent** (powered by Claude) breaks it down into concrete, self-contained subtasks. The tasks appear as cards on a kanban board (To Do / In Progress / Done), where you can move, edit, add, and delete them — or ask a **Revise Agent** to reshape the plan in natural language.
@@ -95,6 +96,7 @@ MVP scope is the Planner and Revise agents with sequential, client-side task mov
     image: "/images/webloftet.png",
     heroImage: "/images/webloftet.png",
     liveUrl: "https://webloftet.no",
+    repoUrl: "https://github.com/tomchrister/",
     readme: `# Webloftet
 
 Webloftet is the marketing website for a Norwegian web agency. It presents the agency's services and packages, showcases past projects, answers FAQs, and lets prospective clients get in touch through a contact form. It also includes a Firebase-backed blog with a password-protected admin area for creating and editing articles.
@@ -133,6 +135,7 @@ The public marketing pages and the blog live under one SPA. Blog articles are st
     image: "/images/holidaze.png",
     heroImage: "/images/holidaze.png",
     liveUrl: "https://holidaze-eta.vercel.app/",
+    repoUrl: "https://github.com/tomchrister/",
     readme: `# Holidaze — Accommodation Booking Front-End
 
 Holidaze is a modern front-end application for an accommodation booking site. Users can browse and book venues for holidays, and register as venue managers to manage listings and bookings. It's built on the official Holidaze API and designed in Figma before implementation.
@@ -172,6 +175,7 @@ The app splits into a customer-facing booking flow and an admin-facing dashboard
     image: "/images/babyens-utvikling.png",
     heroImage: "/images/babyens-utvikling.png",
     liveUrl: "https://babyens-utvikling.vercel.app/",
+    repoUrl: "https://github.com/tomchrister/",
     readme: `# Babyens utvikling — week by week 👶
 
 A small website that shows a child's development week by week through the whole first year (weeks 1–52). You enter the baby's birth date and the site automatically opens on the right week — with the option to page back and forth. Built with **Vite + React + TypeScript + Tailwind CSS + React Router**.
@@ -209,6 +213,7 @@ Normal variation is wide, and children mature at different rates. This is genera
     image: "/images/marka.png",
     heroImage: "/images/marka.png",
     liveUrl: "https://marka-demo.vercel.app/",
+    repoUrl: "https://github.com/tomchrister/",
     readme: `# Marka
 
 A demo e-commerce website for a Norwegian natural-products brand — honey, foraged goods, and wild ingredients from the Norwegian outdoors (*marka*). Built as a single-page application with a shop, product pages, a wishlist, a cart, and an editorial magazine section.

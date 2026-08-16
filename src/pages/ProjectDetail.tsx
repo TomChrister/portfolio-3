@@ -89,7 +89,7 @@ export default function ProjectDetail() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-md border border-border px-[18px] py-2.5 font-mono text-[12.5px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
               >
-                Source ↗
+Repo ↗
               </a>
             )}
           </div>
