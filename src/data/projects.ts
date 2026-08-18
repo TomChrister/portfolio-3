@@ -35,8 +35,8 @@ export const projects: Project[] = [
         "AI-powered planning assistant with a kanban interface for daily and project-level task flow.",
     tags: ["React", "TypeScript","Tailwind CSS", "Claude Sonnet 4.6 API"],
     tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Vercel", "React Router"],
-    image: "/images/planbase.png",
-    heroImage: "/images/planbase.png",
+    image: "/images/planbase.jpg",
+    heroImage: "/images/planbase.jpg",
     liveUrl: "https://planbase-agent.vercel.app/",
     repoUrl: "https://github.com/TomChrister/planbase",
     readme: `# Planbase — AI Task Orchestrator
@@ -93,8 +93,8 @@ MVP scope is the Planner and Revise agents with sequential, client-side task mov
         "Extracts structured details from a job posting, then drafts and refines a tailored cover letter through chat.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Zod", "Vercel", "Vercel AI SDK"],
-    image: "/images/jobbsoknadsassistent.png",
-    heroImage: "/images/jobbsoknadsassistent.png",
+    image: "/images/jobbsoknadsassistent.jpg",
+    heroImage: "/images/jobbsoknadsassistent.jpg",
     liveUrl: "https://jobbsoknadsassistent.vercel.app",
     repoUrl: "https://github.com/TomChrister/llm-project",
     readme: `# Jobbsøknadsassistent — Job Application Assistant
@@ -128,8 +128,8 @@ The extracted job data is sent as system context with every chat request, so the
         "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
     tags: ["React", "TypeScript", "Tailwind CSS", "React Router"],
     tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
-    image: "/images/babyens-utvikling.png",
-    heroImage: "/images/babyens-utvikling.png",
+    image: "/images/babyens-utvikling.jpg",
+    heroImage: "/images/babyens-utvikling.jpg",
     liveUrl: "https://babyens-utvikling.vercel.app/",
     repoUrl: "https://github.com/tomchrister/babyens-utvikling",
     readme: `# Babyens utvikling — week by week 👶
@@ -166,8 +166,8 @@ Normal variation is wide, and children mature at different rates. This is genera
       "Web design & development studio for SMB clients — from Figma prototype to production build.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "React Router", "Firebase", "Figma"],
-    image: "/images/webloftet.png",
-    heroImage: "/images/webloftet.png",
+    image: "/images/webloftet.jpg",
+    heroImage: "/images/webloftet.jpg",
     liveUrl: "https://webloftet.no",
     readme: `# Webloftet
 
@@ -204,8 +204,8 @@ The public marketing pages and the blog live under one SPA. Blog articles are st
       "Accommodation booking platform with separate customer & admin experiences, prototyped in Figma first.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     tech: ["React", "TypeScript", "Tailwind CSS", "Figma", "Noroff API"],
-    image: "/images/holidaze.png",
-    heroImage: "/images/holidaze.png",
+    image: "/images/holidaze.jpg",
+    heroImage: "/images/holidaze.jpg",
     liveUrl: "https://holidaze-eta.vercel.app/",
     repoUrl: "https://github.com/tomchrister/holidaze",
     readme: `# Holidaze — Accommodation Booking Front-End
@@ -244,8 +244,8 @@ The app splits into a customer-facing booking flow and an admin-facing dashboard
         "Multilingual e-commerce reference build exploring localized product catalogues and checkout flows.",
     tags: ["React", "i18n"],
     tech: ["React", "TypeScript", "i18n", "Tailwind"],
-    image: "/images/marka.png",
-    heroImage: "/images/marka.png",
+    image: "/images/marka.jpg",
+    heroImage: "/images/marka.jpg",
     liveUrl: "https://marka-demo.vercel.app/",
     repoUrl: "https://github.com/tomchrister/marka",
     readme: `# Marka
