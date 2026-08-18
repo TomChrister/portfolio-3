@@ -66,7 +66,7 @@ export default function Hero() {
               <Briefcase className="h-[14px] w-[14px] flex-shrink-0 text-[#F5C15E]" aria-hidden="true" />
               <span>
                 <em className="not-italic text-accent">Web Editor &amp; Support Specialist</em> @
-                SoftwareOne
+                <span><a href='https://www.linkedin.com/company/softwareone/' target='_blank'> SoftwareOne</a></span>
               </span>
             </span>
             <span className="inline-flex items-center gap-1.5">

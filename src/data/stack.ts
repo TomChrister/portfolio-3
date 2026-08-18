@@ -10,31 +10,32 @@ export interface StackItem {
 // swap the `logo` URL for a real asset whenever you have one.
 
 export const productStack: StackItem[] = [
-  { name: "React", logo: "https://cdn.simpleicons.org/react/5EEAD4", description: "Component architecture, hooks" },
-  { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/5EEAD4", description: "Type-safe application code" },
-  { name: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F5B759", description: "Core scripting language" },
-  { name: "HTML", logo: "https://cdn.simpleicons.org/html5/F5B759", description: "Markup & semantics" },
-  { name: "CSS", logo: "https://cdn.simpleicons.org/css/5EEAD4", description: "Styling & layout" },
-  { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/5EEAD4", description: "Utility-first styling" },
-  { name: "Vite", logo: "https://cdn.simpleicons.org/vite/F5B759", description: "Build tooling & dev server" },
-  { name: "Cypress", logo: "https://cdn.simpleicons.org/cypress/F5B759", description: "End-to-end testing" },
-  { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase/F5B759", description: "Auth, Firestore, Storage" },
+  { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB", description: "Component architecture, hooks" },
+  { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6", description: "Type-safe application code" },
+  { name: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F7DF1E", description: "Core scripting language" },
+  { name: "HTML", logo: "https://cdn.simpleicons.org/html5/E34F26", description: "Markup & semantics" },
+  { name: "CSS", logo: "https://cdn.simpleicons.org/css/663399", description: "Styling & layout" },
+  { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4", description: "Utility-first styling" },
+  { name: "Vite", logo: "https://cdn.simpleicons.org/vite/9135FF", description: "Build tooling & dev server" },
+  { name: "Cypress", logo: "https://cdn.simpleicons.org/cypress/69D3A7", description: "End-to-end testing" },
+  { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase/DD2C00", description: "Auth, Firestore, Storage" },
   { name: "Claude Code", logo: "https://cdn.simpleicons.org/claudecode/D97757", description: "AI-assisted development" },
-  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/5EEAD4", description: "UX prototyping & design" },
+  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/F24E1E", description: "UX prototyping & design" },
 ];
 
 export const platformStack: StackItem[] = [
-  { name: "Git", logo: "https://cdn.simpleicons.org/git/5EEAD4", description: "Version control" },
+  { name: "Git", logo: "https://cdn.simpleicons.org/git/F03C2E", description: "Version control" },
   { name: "GitHub", logo: "https://cdn.simpleicons.org/github/F5B759", description: "Repos, PRs, collaboration" },
-  { name: "npm", logo: "https://cdn.simpleicons.org/npm/5EEAD4", description: "Package management" },
+  { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions/2088FF", description: "CI/CD pipelines & branch rules" },
+  { name: "npm", logo: "https://cdn.simpleicons.org/npm/CB3837", description: "Package management" },
   { name: "Node.js", logo: "https://cdn.simpleicons.org/node.js/5FA04E", description: "Backend & server" },
   { name: "React Router", logo: "https://cdn.simpleicons.org/reactrouter/CA4245", description: "Routing & navigation" },
-  { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/5EEAD4", description: "Hosting & deployment" },
+  { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/ffffff", description: "Hosting & deployment" },
   { name: "Sitecore CMS", logo: "https://cdn.simpleicons.org/sitecore/EB1F1F", description: "Global web production" },
   { name: "EPiServer CMS", logo: "/logos/episerver.svg", description: "Global web production" },
   { name: "Dynamics 365", logo: "/logos/d365.svg", description: "Marketing automation" },
-  { name: "GA4", logo: "https://cdn.simpleicons.org/googleanalytics/F5B759", description: "Analytics & reporting" },
-  { name: "Jira", logo: "https://cdn.simpleicons.org/jira/F5B759", description: "Ticket & project coordination" },
+  { name: "GA4", logo: "https://cdn.simpleicons.org/googleanalytics/E37400", description: "Analytics & reporting" },
+  { name: "Jira", logo: "https://cdn.simpleicons.org/jira/0052CC", description: "Ticket & project coordination" },
 ];
 
 // Extra logos for technologies used on individual projects that aren't part of
