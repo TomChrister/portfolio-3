@@ -92,7 +92,7 @@ MVP scope is the Planner and Revise agents with sequential, client-side task mov
     description:
         "Extracts structured details from a job posting, then drafts and refines a tailored cover letter through chat.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel AI SDK", "Claude Sonnet 4.6 API", "Zod", "Vercel"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Zod", "Vercel", "Vercel AI SDK"],
     image: "/images/jobbsoknadsassistent.png",
     heroImage: "/images/jobbsoknadsassistent.png",
     liveUrl: "https://jobbsoknadsassistent.vercel.app",
@@ -126,7 +126,7 @@ The extracted job data is sent as system context with every chat request, so the
     title: "Babyens utvikling",
     description:
         "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "React Router"],
     tech: ["Vite","react", "TypeScript", "Tailwind CSS", "React Router"],
     image: "/images/babyens-utvikling.png",
     heroImage: "/images/babyens-utvikling.png",

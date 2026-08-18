@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <footer id="contact" className="border-t border-border py-14">
       <div className="mx-auto max-w-[900px] px-6">
-        <div className="mb-3.5 flex items-center gap-2.5 font-mono text-xs text-accent before:h-px before:w-4 before:bg-accent">
+        <div className="mb-3.5 flex items-center gap-2.5 font-mono text-accent before:h-px before:w-4 before:bg-accent">
           03 — contact
         </div>
 
@@ -21,7 +21,7 @@ export default function Contact() {
           → Open to front-end &amp; web platform roles. Based in Oslo, happy to talk remote.
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-5 font-mono text-[12.5px]">
+        <div className="mt-4 flex flex-wrap gap-5 font-mono text-[14px]">
           {links.map((link) => (
             <a
               key={link.label}
@@ -34,7 +34,7 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="mt-8 font-mono text-[11.5px] text-[#4A5560]">
+        <div className="mt-8 font-mono text text-[#4A5560]">
           tcs.dev
         </div>
       </div>
