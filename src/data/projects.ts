@@ -242,8 +242,8 @@ The app splits into a customer-facing booking flow and an admin-facing dashboard
     title: "MARKA",
     description:
         "Multilingual e-commerce reference build exploring localized product catalogues and checkout flows.",
-    tags: ["React", "i18n"],
-    tech: ["React", "TypeScript", "i18n", "Tailwind"],
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "React Router", "Zustand"],
     image: "/images/marka.jpg",
     heroImage: "/images/marka.jpg",
     liveUrl: "https://marka-demo.vercel.app/",

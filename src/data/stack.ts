@@ -50,6 +50,8 @@ const extraLogos: Record<string, string> = {
   "tiptap": "https://cdn.simpleicons.org/tiptap/5EEAD4",
   "i18n": "https://cdn.simpleicons.org/i18next/5EEAD4",
   "node": "https://cdn.simpleicons.org/nodedotjs/5EEAD4",
+  "vercel ai sdk": "https://cdn.simpleicons.org/vercel/ffffff",
+  "zustand": "/logos/zustand.svg",
 };
 
 const logoIndex: Record<string, string> = (() => {
