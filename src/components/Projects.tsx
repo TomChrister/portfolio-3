@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 import { projects } from "../data/projects";
 
 export default function Projects() {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === "en" ? "en" : "no";
+
   return (
     <section id="projects" className="border-t border-border py-16">
       <div className="mx-auto max-w-[900px] px-6">
         <div className="mb-3.5 flex items-center gap-2.5 font-mono text-sm text-accent before:h-px before:w-4 before:bg-accent">
-          02 — build output
+          {t("projects.sectionLabel")}
         </div>
-        <h2 className="mb-2.5 text-[26px] font-extrabold tracking-tight text-ink">Selected work</h2>
+        <h2 className="mb-2.5 text-[26px] font-extrabold tracking-tight text-ink">{t("projects.heading")}</h2>
         <p className="mb-8 max-w-[560px] text-[17px] text-muted">
-          A selection of things I've designed and built. Open{" "}
-          <span className="font-mono text-accent">About</span> for the full write-up, or jump
-          straight to the live site.
+          <Trans
+            i18nKey="projects.subtitle"
+            components={{ bold: <span className="font-mono text-accent" /> }}
+          />
         </p>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -42,7 +47,7 @@ export default function Projects() {
                       {project.title}
                     </Link>
                   </div>
-                  <p className="mb-3.5 text-[15px] text-muted">{project.description}</p>
+                  <p className="mb-3.5 text-[15px] text-muted">{project.description[lang]}</p>
                   <div className="mb-5 flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
                       <span
@@ -59,7 +64,7 @@ export default function Projects() {
                       to={`/projects/${project.slug}`}
                       className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 font-mono text-[11.5px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
                     >
-                      About →
+                      {t("projects.about")}
                     </Link>
                     {hasLive ? (
                       <a
@@ -68,11 +73,11 @@ export default function Projects() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-1.5 rounded-md border border-accent bg-accent px-3 py-1.5 font-mono text-[11.5px] font-semibold text-[#08221D] transition-transform hover:-translate-y-px"
                       >
-                        Live site ↗
+                        {t("projects.liveSite")}
                       </a>
                     ) : (
                       <span className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 font-mono text-[11.5px] font-medium text-[#4A5560]">
-                        Coming soon
+                        {t("projects.comingSoon")}
                       </span>
                     )}
                   </div>

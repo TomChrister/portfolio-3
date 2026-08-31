@@ -1,10 +1,14 @@
-const links = [
-  { href: "/#stack", label: "stack" },
-  { href: "/#projects", label: "projects" },
-  { href: "/#contact", label: "contact" },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
+
+  const links = [
+    { href: "/#stack", label: t("nav.stack") },
+    { href: "/#projects", label: t("nav.projects") },
+    { href: "/#contact", label: t("nav.contact") },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-bg/75 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-[900px] items-center justify-between px-6">
@@ -24,9 +28,34 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 rounded-full border border-accent/30 bg-accentTint px-3 py-1 font-mono text-[11px] text-accent">
-          <span className="h-1.5 w-1.5 animate-pulse2 rounded-full bg-accent" />
-          open to work
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 rounded-full border border-accent/30 bg-accentTint px-3 py-1 font-mono text-[11px] text-accent">
+            <span className="h-1.5 w-1.5 animate-pulse2 rounded-full bg-accent" />
+            {t("nav.openToWork")}
+          </div>
+
+          <div className="flex items-center overflow-hidden rounded-full border border-border font-mono text-[11px]">
+            <button
+              type="button"
+              onClick={() => i18n.changeLanguage("no")}
+              aria-pressed={i18n.language === "no"}
+              className={`px-2.5 py-1 transition-colors ${
+                i18n.language === "no" ? "bg-accent text-[#08221D]" : "text-muted hover:text-ink"
+              }`}
+            >
+              NO
+            </button>
+            <button
+              type="button"
+              onClick={() => i18n.changeLanguage("en")}
+              aria-pressed={i18n.language === "en"}
+              className={`px-2.5 py-1 transition-colors ${
+                i18n.language === "en" ? "bg-accent text-[#08221D]" : "text-muted hover:text-ink"
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </nav>

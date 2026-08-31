@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "../components/Navbar";
 import { getProject } from "../data/projects";
 import { logoFor } from "../data/stack";
@@ -7,6 +8,8 @@ import { logoFor } from "../data/stack";
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProject(slug) : undefined;
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === "en" ? "en" : "no";
 
   // React Router preserves scroll position across routes; open detail pages at the top.
   useEffect(() => {
@@ -19,16 +22,16 @@ export default function ProjectDetail() {
         <Navbar />
         <div className="mx-auto max-w-[900px] px-6 py-24 text-center">
           <h1 className="mb-3 text-[26px] font-extrabold tracking-tight text-ink">
-            Project not found
+            {t("projectDetail.notFoundTitle")}
           </h1>
           <p className="mb-6 text-[17px] text-muted">
-            There's no project at this address.
+            {t("projectDetail.notFoundBody")}
           </p>
           <a
             href="/#projects"
             className="inline-flex items-center gap-2 rounded-md border border-accent bg-accent px-[18px] py-2.5 font-mono text-[12.5px] font-semibold text-[#08221D] transition-transform hover:-translate-y-px"
           >
-            ← Back to projects
+            {t("projectDetail.backToProjects")}
           </a>
         </div>
       </>
@@ -46,7 +49,7 @@ export default function ProjectDetail() {
           href="/#projects"
           className="inline-flex items-center gap-1.5 font-mono text-[12.5px] text-muted transition-colors hover:text-accent"
         >
-          ← back to work
+          {t("projectDetail.backToWork")}
         </a>
 
         {/* Hero image */}
@@ -64,7 +67,7 @@ export default function ProjectDetail() {
             <h1 className="text-[32px] font-extrabold tracking-tight text-ink sm:text-[38px]">
               {project.title}
             </h1>
-            <p className="mt-2 max-w-[560px] text-[17px] text-muted">{project.description}</p>
+            <p className="mt-2 max-w-[560px] text-[17px] text-muted">{project.description[lang]}</p>
           </div>
 
           <div className="flex flex-shrink-0 flex-wrap gap-2">
@@ -75,11 +78,11 @@ export default function ProjectDetail() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-md border border-accent bg-accent px-[18px] py-2.5 font-mono text-[12.5px] font-semibold text-[#08221D] transition-transform hover:-translate-y-px"
               >
-                Live site ↗
+                {t("projectDetail.liveSite")}
               </a>
             ) : (
               <span className="inline-flex items-center gap-2 rounded-md border border-border px-[18px] py-2.5 font-mono text-[12.5px] font-medium text-[#4A5560]">
-                Live site coming soon
+                {t("projectDetail.liveSiteComingSoon")}
               </span>
             )}
             {project.repoUrl && (
@@ -89,7 +92,7 @@ export default function ProjectDetail() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-md border border-border px-[18px] py-2.5 font-mono text-[12.5px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
               >
-Repo ↗
+                {t("projectDetail.repo")}
               </a>
             )}
           </div>
@@ -97,7 +100,7 @@ Repo ↗
 
         {/* Tech used */}
         <h2 className="mb-3 mt-10 font-mono text-xs uppercase tracking-wide text-muted">
-          built with
+          {t("projectDetail.builtWith")}
         </h2>
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[10px] border border-border bg-border sm:grid-cols-3">
           {project.tech.map((name) => (
@@ -115,7 +118,7 @@ Repo ↗
 
         {/* Write-up */}
         <div className="mt-12 border-t border-border pt-10">
-          <Readme text={project.readme} />
+          <Readme text={project.readme[lang]} />
         </div>
       </article>
     </>
