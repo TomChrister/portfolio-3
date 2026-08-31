@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "stack": "stack",
+    "projects": "prosjekter",
+    "contact": "kontakt",
+    "openToWork": "åpen for muligheter"
+  },
+  "hero": {
+    "tabs": {
+      "about": "om.tsx",
+      "stack": "stack.json",
+      "contact": "kontakt.md"
+    },
+    "titleLine1": "Front-end utvikler",
+    "titleLine2": "og webplattform-spesialist",
+    "bio": "Bygger brukergrensesnitt med <bold>React</bold> og <bold>TypeScript</bold>, og holder store <bold>Sitecore</bold>- og <bold>Dynamics 365</bold>-plattformer i drift under dem.",
+    "location": "Oslo, Norge",
+    "jobTitle": "Web Editor & Support Specialist",
+    "studioTagline": "— uavhengig studio",
+    "viewProjects": "Se prosjekter",
+    "getInTouch": "Ta kontakt"
+  },
+  "techStack": {
+    "sectionLabel": "01 — avhengigheter",
+    "heading": "Det jeg bygger med",
+    "subtitle": "Fordelt på to registre: verktøyene jeg leverer produkt med, og plattformene jeg holder driften av enterprise-web gående på.",
+    "techStack": "tech stack",
+    "ecosystem": "økosystem"
+  },
+  "projects": {
+    "sectionLabel": "02 — prosjekter",
+    "heading": "Utvalgte prosjekter",
+    "subtitle": "Et utvalg av ting jeg har designet og bygget. Åpne <bold>Om</bold> for hele beskrivelsen, eller hopp rett til den live siden.",
+    "about": "Om →",
+    "liveSite": "Live side ↗",
+    "comingSoon": "Kommer snart"
+  },
+  "contact": {
+    "sectionLabel": "03 — kontakt",
+    "tagline": "→ Åpen for front-end- og webplattformroller. Basert i Oslo, åpen for remote."
+  },
+  "projectDetail": {
+    "notFoundTitle": "Fant ikke prosjektet",
+    "notFoundBody": "Det finnes ingen prosjekt på denne adressen.",
+    "backToProjects": "← Tilbake til prosjekter",
+    "backToWork": "← tilbake til arbeider",
+    "liveSite": "Live side ↗",
+    "liveSiteComingSoon": "Live side kommer snart",
+    "repo": "Repo ↗",
+    "builtWith": "bygget med"
+  }
+}

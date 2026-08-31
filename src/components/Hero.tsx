@@ -1,6 +1,9 @@
 import { ArrowRight, Briefcase, MapPin, Wrench } from "lucide-react";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <div className="mx-auto max-w-[900px] px-6 pb-10 pt-16">
       <div className="overflow-hidden rounded-[10px] border border-border bg-surface shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
@@ -13,19 +16,19 @@ export default function Hero() {
           </div>
           <div className="flex gap-0.5 overflow-x-auto">
             <span className="whitespace-nowrap rounded-t-md border-b-2 border-accent bg-surface px-3 py-1.5 font-mono text-xs text-ink">
-              about.tsx
+              {t("hero.tabs.about")}
             </span>
             <a
               href="#stack"
               className="whitespace-nowrap rounded-t-md border-b-2 border-transparent px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:text-ink"
             >
-              stack.json
+              {t("hero.tabs.stack")}
             </a>
             <a
               href="#contact"
               className="whitespace-nowrap rounded-t-md border-b-2 border-transparent px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:text-ink"
             >
-              contact.md
+              {t("hero.tabs.contact")}
             </a>
           </div>
         </div>
@@ -44,28 +47,28 @@ export default function Hero() {
           <CodeLine n={4}>{"};"}</CodeLine>
 
           <h1 className="ml-0 mt-4 font-mono text-[28px] font-bold leading-tight tracking-tight text-ink sm:ml-10 sm:text-[44px]">
-            Front-end developer
+            {t("hero.titleLine1")}
             <br />
-            &amp; web systems specialist
-            <span className="ml-1 inline-block h-[0.85em] w-[10px] translate-y-[0.1em] animate-blink bg-accent align-middle" />
+            {t("hero.titleLine2")}
+            <span className="ml-1 mb-3.5 inline-block h-[0.85em] w-[10px] translate-y-[0.1em] animate-blink bg-accent align-middle" />
           </h1>
 
           <p className="ml-0 mt-2 text-[17.5px] text-muted sm:ml-10">
-            Building interfaces with <b className="font-semibold text-ink">React</b> &amp;{" "}
-            <b className="font-semibold text-ink">TypeScript</b> , and keeping large-scale{" "}
-            <b className="font-semibold text-ink">Sitecore</b> /{" "}
-            <b className="font-semibold text-ink">Dynamics 365</b> web platforms running underneath them.
+            <Trans
+              i18nKey="hero.bio"
+              components={{ bold: <b className="font-semibold text-ink" /> }}
+            />
           </p>
 
           <div className="ml-0 mt-6 flex flex-wrap gap-x-6 gap-y-2.5 font-mono text-[12.5px] text-muted sm:ml-10">
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="h-[14px] w-[14px] flex-shrink-0 text-[#F5716C]" aria-hidden="true" />
-              <em className="not-italic text-accent">Oslo, Norway</em>
+              <em className="not-italic text-accent">{t("hero.location")}</em>
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Briefcase className="h-[14px] w-[14px] flex-shrink-0 text-[#F5C15E]" aria-hidden="true" />
               <span>
-                <em className="not-italic text-accent">Web Editor &amp; Support Specialist</em> @
+                <em className="not-italic text-accent">{t("hero.jobTitle")}</em> @
                 <span><a href='https://www.linkedin.com/company/softwareone/' target='_blank'> SoftwareOne</a></span>
               </span>
             </span>
@@ -75,7 +78,7 @@ export default function Hero() {
                 <a href="https://webloftet.no" target="_blank" rel="noreferrer">
                   <em className="not-italic text-accent">Webloftet.no</em>
                 </a>
-                {" — independent studio"}
+                {" "}{t("hero.studioTagline")}
               </span>
             </span>
           </div>
@@ -85,14 +88,14 @@ export default function Hero() {
               href="#projects"
               className="inline-flex items-center gap-2 rounded-md border border-accent bg-accent px-[18px] py-2.5 font-mono text-[12.5px] font-semibold text-[#08221D] transition-transform hover:-translate-y-px"
             >
-              View projects
+              {t("hero.viewProjects")}
               <ArrowRight className="h-[14px] w-[14px]" aria-hidden="true" />
             </a>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-md border border-border px-[18px] py-2.5 font-mono text-[12.5px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
             >
-              Get in touch
+              {t("hero.getInTouch")}
             </a>
           </div>
         </div>

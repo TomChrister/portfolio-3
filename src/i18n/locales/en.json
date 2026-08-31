@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "stack": "stack",
+    "projects": "projects",
+    "contact": "contact",
+    "openToWork": "open to work"
+  },
+  "hero": {
+    "tabs": {
+      "about": "about.tsx",
+      "stack": "stack.json",
+      "contact": "contact.md"
+    },
+    "titleLine1": "Front-end developer",
+    "titleLine2": "& web systems specialist",
+    "bio": "Building interfaces with <bold>React</bold> & <bold>TypeScript</bold>, and keeping large-scale <bold>Sitecore</bold> / <bold>Dynamics 365</bold> web platforms running underneath them.",
+    "location": "Oslo, Norway",
+    "jobTitle": "Web Editor & Support Specialist",
+    "studioTagline": "— independent studio",
+    "viewProjects": "View projects",
+    "getInTouch": "Get in touch"
+  },
+  "techStack": {
+    "sectionLabel": "01 — dependencies",
+    "heading": "What I build with",
+    "subtitle": "Split across two registries, the tools I ship product with, and the platforms I keep enterprise web running on.",
+    "techStack": "tech stack",
+    "ecosystem": "ecosystem"
+  },
+  "projects": {
+    "sectionLabel": "02 — build output",
+    "heading": "Selected work",
+    "subtitle": "A selection of things I've designed and built. Open <bold>About</bold> for the full write-up, or jump straight to the live site.",
+    "about": "About →",
+    "liveSite": "Live site ↗",
+    "comingSoon": "Coming soon"
+  },
+  "contact": {
+    "sectionLabel": "03 — contact",
+    "tagline": "→ Open to front-end & web platform roles. Based in Oslo, happy to talk remote."
+  },
+  "projectDetail": {
+    "notFoundTitle": "Project not found",
+    "notFoundBody": "There's no project at this address.",
+    "backToProjects": "← Back to projects",
+    "backToWork": "← back to work",
+    "liveSite": "Live site ↗",
+    "liveSiteComingSoon": "Live site coming soon",
+    "repo": "Repo ↗",
+    "builtWith": "built with"
+  }
+}
