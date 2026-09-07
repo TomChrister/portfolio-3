@@ -29,11 +29,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 rounded-full border border-accent/30 bg-accentTint px-3 py-1 font-mono text-[11px] text-accent">
-            <span className="h-1.5 w-1.5 animate-pulse2 rounded-full bg-accent" />
-            {t("nav.openToWork")}
-          </div>
-
           <div className="flex items-center overflow-hidden rounded-full border border-border font-mono text-[11px]">
             <button
               type="button"

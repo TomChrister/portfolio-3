@@ -2,8 +2,7 @@
   "nav": {
     "stack": "stack",
     "projects": "prosjekter",
-    "contact": "kontakt",
-    "openToWork": "åpen for muligheter"
+    "contact": "kontakt"
   },
   "hero": {
     "tabs": {
@@ -30,8 +29,8 @@
   "projects": {
     "sectionLabel": "02 — prosjekter",
     "heading": "Utvalgte prosjekter",
-    "subtitle": "Et utvalg av ting jeg har designet og bygget. Åpne <bold>Om</bold> for hele beskrivelsen, eller hopp rett til den live siden.",
-    "about": "Om →",
+    "subtitle": "Et utvalg av ting jeg har designet og bygget. Åpne <bold>README</bold> for hele beskrivelsen, eller hopp rett til den live siden.",
+    "about": "README →",
     "liveSite": "Live side ↗",
     "comingSoon": "Kommer snart"
   },

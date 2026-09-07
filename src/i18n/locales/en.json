@@ -2,8 +2,7 @@
   "nav": {
     "stack": "stack",
     "projects": "projects",
-    "contact": "contact",
-    "openToWork": "open to work"
+    "contact": "contact"
   },
   "hero": {
     "tabs": {
@@ -30,8 +29,8 @@
   "projects": {
     "sectionLabel": "02 — build output",
     "heading": "Selected work",
-    "subtitle": "A selection of things I've designed and built. Open <bold>About</bold> for the full write-up, or jump straight to the live site.",
-    "about": "About →",
+    "subtitle": "A selection of things I've designed and built. Open <bold>README</bold> for the full write-up, or jump straight to the live site.",
+    "about": "README →",
     "liveSite": "Live site ↗",
     "comingSoon": "Coming soon"
   },

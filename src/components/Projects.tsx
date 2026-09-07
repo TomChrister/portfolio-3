@@ -26,7 +26,7 @@ export default function Projects() {
             return (
               <div
                 key={project.slug}
-                className="group flex flex-col overflow-hidden rounded-[10px] border border-border bg-surface transition-all hover:-translate-y-0.5 hover:border-accent/40"
+                className="group flex flex-col overflow-hidden rounded-[10px] border border-border bg-surface transition-colors hover:border-accent/40"
               >
                 <Link
                   to={`/projects/${project.slug}`}
