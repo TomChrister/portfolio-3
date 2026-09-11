@@ -60,7 +60,7 @@ export default function Hero() {
             />
           </p>
 
-          <div className="ml-0 mt-6 flex flex-wrap gap-x-6 gap-y-2.5 font-mono text-[12.5px] text-muted sm:ml-10">
+          <div className="ml-0 mt-6 flex flex-col flex-wrap gap-x-6 gap-y-2.5 font-mono text-[12.5px] text-muted sm:ml-10">
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="h-[14px] w-[14px] flex-shrink-0 text-[#F5716C]" aria-hidden="true" />
               <em className="not-italic text-accent">{t("hero.location")}</em>
