@@ -12,7 +12,7 @@ export default function Contact() {
 
   return (
     <footer id="contact" className="border-t border-border py-14">
-      <div className="mx-auto max-w-[900px] px-6">
+      <div className="mx-auto max-w-[950px] px-6">
         <div className="mb-3.5 flex items-center gap-2.5 font-mono text-accent before:h-px before:w-4 before:bg-accent">
           {t("contact.sectionLabel")}
         </div>

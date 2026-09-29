@@ -20,7 +20,7 @@ export default function ProjectDetail() {
     return (
       <>
         <Navbar />
-        <div className="mx-auto max-w-[900px] px-6 py-24 text-center">
+        <div className="mx-auto max-w-[950px] px-6 py-24 text-center">
           <h1 className="mb-3 text-[26px] font-extrabold tracking-tight text-ink">
             {t("projectDetail.notFoundTitle")}
           </h1>
@@ -44,7 +44,7 @@ export default function ProjectDetail() {
     <>
       <Navbar />
 
-      <article className="mx-auto max-w-[900px] px-6 pb-20 pt-10">
+      <article className="mx-auto max-w-[950px] px-6 pb-20 pt-10">
         <a
           href="/#projects"
           className="inline-flex items-center gap-1.5 font-mono text-[12.5px] text-muted transition-colors hover:text-accent"

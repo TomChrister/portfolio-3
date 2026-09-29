@@ -5,7 +5,7 @@ export default function Hero() {
     const { t } = useTranslation();
 
     return (
-        <div className="mx-auto max-w-[900px] px-6 pb-10 pt-16">
+        <div className="mx-auto max-w-[950px] px-6 pb-10 pt-16">
             <div
                 className="overflow-hidden rounded-[10px] border border-border bg-surface shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
                 {/* Title bar */}

@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-bg/75 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-[900px] items-center justify-between px-6">
+      <div className="mx-auto flex h-14 max-w-[950px] items-center justify-between px-6">
         <a
           href="/"
           className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight"
