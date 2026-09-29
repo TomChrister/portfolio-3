@@ -29,13 +29,13 @@ export const platformStack: StackItem[] = [
   { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions/2088FF", description: { en: "CI/CD pipelines & branch rules", no: "CI/CD-pipeliner og branch-regler" } },
   { name: "npm", logo: "https://cdn.simpleicons.org/npm/CB3837", description: { en: "Package management", no: "Pakkehåndtering" } },
   { name: "Node.js", logo: "https://cdn.simpleicons.org/node.js/5FA04E", description: { en: "Backend & server", no: "Backend og server" } },
+  { name: "Express", logo: "https://cdn.simpleicons.org/express/ffffff", description: { en: "REST APIs & middleware", no: "REST-API-er og middleware" } },
   { name: "React Router", logo: "https://cdn.simpleicons.org/reactrouter/CA4245", description: { en: "Routing & navigation", no: "Routing og navigasjon" } },
   { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/ffffff", description: { en: "Hosting & deployment", no: "Hosting og deployment" } },
   { name: "Sitecore CMS", logo: "https://cdn.simpleicons.org/sitecore/EB1F1F", description: { en: "Global web production", no: "Global webproduksjon" } },
   { name: "EPiServer CMS", logo: "/logos/episerver.svg", description: { en: "Global web production", no: "Global webproduksjon" } },
   { name: "Dynamics 365", logo: "/logos/d365.svg", description: { en: "Marketing automation", no: "Markedsføringsautomatisering" } },
   { name: "GA4", logo: "https://cdn.simpleicons.org/googleanalytics/E37400", description: { en: "Analytics & reporting", no: "Analyse og rapportering" } },
-  { name: "Jira", logo: "https://cdn.simpleicons.org/jira/0052CC", description: { en: "Ticket & project coordination", no: "Sak- og prosjektkoordinering" } },
 ];
 
 // Extra logos for technologies used on individual projects that aren't part of
@@ -52,6 +52,8 @@ const extraLogos: Record<string, string> = {
   "node": "https://cdn.simpleicons.org/nodedotjs/5EEAD4",
   "vercel ai sdk": "https://cdn.simpleicons.org/vercel/ffffff",
   "zustand": "/logos/zustand.svg",
+  "helmet": "/logos/helmet.svg",
+  "cors": "/logos/cors.svg",
 };
 
 const logoIndex: Record<string, string> = (() => {
