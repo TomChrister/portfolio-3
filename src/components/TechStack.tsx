@@ -3,7 +3,7 @@ import { platformStack, productStack, type StackItem } from "../data/stack";
 
 function StackCell({ item }: { item: StackItem }) {
   const { i18n } = useTranslation();
-  const lang = i18n.language === "en" ? "en" : "no";
+  const lang = i18n.resolvedLanguage === "en" ? "en" : "no";
 
   return (
       <div className="flex items-center gap-3 bg-surface p-4 sm:p-[18px]">

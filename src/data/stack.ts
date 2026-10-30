@@ -42,14 +42,8 @@ export const platformStack: StackItem[] = [
 // the two stack registries above.
 const extraLogos: Record<string, string> = {
   "next.js": "https://cdn.simpleicons.org/nextdotjs/5EEAD4",
-  "nextjs": "https://cdn.simpleicons.org/nextdotjs/5EEAD4",
   "zod": "https://cdn.simpleicons.org/zod/408AFF",
   "claude sonnet 4.6 api": "https://cdn.simpleicons.org/anthropic/D97757",
-  "claude": "https://cdn.simpleicons.org/anthropic/D97757",
-  "tailwind": "https://cdn.simpleicons.org/tailwindcss/5EEAD4",
-  "tiptap": "https://cdn.simpleicons.org/tiptap/5EEAD4",
-  "i18n": "https://cdn.simpleicons.org/i18next/5EEAD4",
-  "node": "https://cdn.simpleicons.org/nodedotjs/5EEAD4",
   "vercel ai sdk": "https://cdn.simpleicons.org/vercel/ffffff",
   "zustand": "/logos/zustand.svg",
   "helmet": "/logos/helmet.svg",

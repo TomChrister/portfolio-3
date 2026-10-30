@@ -30,7 +30,8 @@ export default function Contact() {
             <a
               key={link.label}
               href={link.href}
-              target='_blank'
+              target={link.target}
+              rel="noreferrer"
               className="text-ink transition-colors hover:text-accent"
             >
               {link.label}

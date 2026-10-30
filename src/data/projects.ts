@@ -4,14 +4,12 @@ export interface Project {
     title: string;
     /** Short one-liner shown on the project card, per language. */
     description: { no: string; en: string };
-    /** Chips shown on the card. */
-    tags: string[];
-    /** Technology names rendered as icon + label on the detail page. */
+    /** Technology names: chips on the card, icon + label on the detail page. */
     tech: string[];
     /** Card thumbnail. */
     image: string;
-    /** Large banner shown at the top of the detail page. */
-    heroImage: string;
+    /** Large banner on the detail page; defaults to `image`. */
+    heroImage?: string;
     /** Live site URL. Use "#" (or omit) when there's nothing public to link to yet. */
     liveUrl: string;
     /** Optional source-code link. */
@@ -19,12 +17,13 @@ export interface Project {
     /**
      * Long-form write-up shown on the detail page, per language. Supports a
      * light markdown subset: `#`/`##`/`###` headings, `- ` bullet lists,
-     * blank-line-separated paragraphs, and `**bold**` / `` `code` ``.
+     * blank-line-separated paragraphs, `**bold**` / `_italic_` / `` `code` `` and
+     * `[text](url)` links.
      */
     readme: { no: string; en: string };
 }
 
-// Swap the `image`, `heroImage` and `liveUrl` fields with real screenshots /
+// Swap the `image` and `liveUrl` fields with real screenshots /
 // links, and paste each project's README into `readme`.
 export const projects: Project[] = [
     {
@@ -34,10 +33,8 @@ export const projects: Project[] = [
             en: "Looks up a car by Norwegian registration number and ranks the best ways to sell it, from private sale to dealer auction.",
             no: "Slår opp en bil med norsk registreringsnummer og rangerer de beste måtene å selge den på, fra privatsalg til forhandlerauksjon.",
         },
-        tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Express", "CORS", "Helmet", "Vercel"],
         tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Express", "CORS", "Helmet", "Vercel", "Statens Vegvesen API"],
         image: "/images/bilmatch.jpg",
-        heroImage: "/images/bilmatch.jpg",
         liveUrl: "https://bil-match.vercel.app",
         repoUrl: "https://github.com/TomChrister/bil-sammenligning",
         readme: {
@@ -112,10 +109,8 @@ Client og server deployes som ett Vercel-prosjekt med Vercel Services: \`/api/*\
             en: "Extracts structured details from a job posting, then drafts and refines a tailored cover letter through chat.",
             no: "Trekker ut strukturerte detaljer fra en stillingsannonse, og utarbeider og finpusser deretter et skreddersydd søknadsbrev gjennom chat.",
         },
-        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Zod", "Vercel", "Vercel AI SDK"],
         tech: ["Next.js", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Zod", "Vercel", "Vercel AI SDK"],
         image: "/images/jobbsoknadsassistent.jpg",
-        heroImage: "/images/jobbsoknadsassistent.jpg",
         liveUrl: "https://jobbsoknadsassistent.vercel.app",
         repoUrl: "https://github.com/TomChrister/llm-project",
         readme: {
@@ -174,10 +169,8 @@ De utpakkede jobbdataene sendes som systemkontekst med hver chat-forespørsel, s
             en: "AI-powered planning assistant with a kanban interface for daily and project-level task flow.",
             no: "AI-drevet planleggingsassistent med et kanban-grensesnitt for daglig og prosjektbasert oppgaveflyt.",
         },
-        tags: ["React", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Vite", "Vercel", "React Router"],
         tech: ["React", "TypeScript", "Tailwind CSS", "Claude Sonnet 4.6 API", "Vite", "Vercel", "React Router"],
         image: "/images/planbase.jpg",
-        heroImage: "/images/planbase.jpg",
         liveUrl: "https://planbase-agent.vercel.app/",
         repoUrl: "https://github.com/TomChrister/planbase",
         readme: {
@@ -276,16 +269,14 @@ MVP-omfanget er Planner- og Revise-agentene med sekvensiell, klientstyrt oppgave
         },
     },
     {
-        slug: "babyens utvikling",
+        slug: "babyens-utvikling",
         title: "Babyens utvikling",
         description: {
             en: "Calculates your baby's current week from their birth date and surfaces week-by-week milestones, tips, and safe-sleep guidance.",
             no: "Beregner babyens nåværende uke ut fra fødselsdatoen, og viser uke-for-uke-milepæler, tips og veiledning om trygg søvn.",
         },
-        tags: ["Vite", "React", "TypeScript", "Tailwind CSS", "React Router"],
         tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "React Router"],
         image: "/images/babyens-utvikling.jpg",
-        heroImage: "/images/babyens-utvikling.jpg",
         liveUrl: "https://babyens-utvikling.vercel.app/",
         repoUrl: "https://github.com/tomchrister/babyens-utvikling",
         readme: {
@@ -350,10 +341,8 @@ Normalvariasjonen er stor, og barn modnes i ulikt tempo. Dette er generell infor
             en: "Web design & development studio for SMB clients — from Figma prototype to production build.",
             no: "Webdesign- og utviklingsstudio for SMB-kunder — fra Figma-prototype til produksjonsklar løsning.",
         },
-        tags: ["Vite", "React", "TypeScript", "Tailwind CSS", "React Router", "Firebase", "Figma"],
         tech: ["Vite", "React", "TypeScript", "Tailwind CSS", "React Router", "Firebase", "Figma"],
         image: "/images/webloftet.jpg",
-        heroImage: "/images/webloftet.jpg",
         liveUrl: "https://webloftet.no",
         readme: {
             en: `# Webloftet
@@ -419,10 +408,8 @@ De offentlige markedsføringssidene og bloggen ligger i én SPA. Blogginnlegg la
             en: "Accommodation booking platform with separate customer & admin experiences, prototyped in Figma first.",
             no: "Bookingplattform for overnatting med separate kunde- og adminopplevelser, først prototypet i Figma.",
         },
-        tags: ["React", "TypeScript", "Tailwind CSS", "Figma", "Noroff API"],
         tech: ["React", "TypeScript", "Tailwind CSS", "Figma", "Noroff API"],
         image: "/images/holidaze.jpg",
-        heroImage: "/images/holidaze.jpg",
         liveUrl: "https://holidaze-eta.vercel.app/",
         repoUrl: "https://github.com/tomchrister/holidaze",
         readme: {
@@ -491,16 +478,14 @@ Appen deles i en kundevendt bookingflyt og et adminvendt dashbord for utleiere, 
             en: "Multilingual e-commerce reference build exploring localized product catalogues and checkout flows.",
             no: "Flerspråklig e-handelsreferanse som utforsker lokaliserte produktkataloger og kasseflyt.",
         },
-        tags: ["React", "TypeScript", "Tailwind CSS", "React Router", "Zustand"],
         tech: ["React", "TypeScript", "Tailwind CSS", "React Router", "Zustand"],
         image: "/images/marka.jpg",
-        heroImage: "/images/marka.jpg",
         liveUrl: "https://marka-demo.vercel.app/",
         repoUrl: "https://github.com/tomchrister/marka",
         readme: {
             en: `# Marka
 
-A demo e-commerce website for a Norwegian natural-products brand — honey, foraged goods, and wild ingredients from the Norwegian outdoors (*marka*). Built as a single-page application with a shop, product pages, a wishlist, a cart, and an editorial magazine section.
+A demo e-commerce website for a Norwegian natural-products brand — honey, foraged goods, and wild ingredients from the Norwegian outdoors (_marka_). Built as a single-page application with a shop, product pages, a wishlist, a cart, and an editorial magazine section.
 
 The page content is in Norwegian.
 

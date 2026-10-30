@@ -4,7 +4,7 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language === "en" ? "en" : "no";
+  const lang = i18n.resolvedLanguage === "en" ? "en" : "no";
 
   return (
     <section id="projects" className="border-t border-border py-16">
@@ -49,7 +49,7 @@ export default function Projects() {
                   </div>
                   <p className="mb-3.5 text-[15px] text-muted">{project.description[lang]}</p>
                   <div className="mb-5 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
+                    {project.tech.map((tag) => (
                       <span
                         key={tag}
                         className="rounded-md border border-border px-1.5 py-0.5 font-mono text-[10.5px] text-muted"
