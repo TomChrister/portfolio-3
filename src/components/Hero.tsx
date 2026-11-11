@@ -21,7 +21,7 @@ export default function Hero() {
         const start = performance.now();
         let frame = 0;
         const tick = (now: number) => {
-            const p = Math.min((now - start) / 2500, 1);
+            const p = Math.min((now - start) / 4500, 1);
             setShown(Math.round(commits * (1 - (1 - p) ** 3)));
             if (p < 1) frame = requestAnimationFrame(tick);
         };
@@ -73,7 +73,7 @@ export default function Hero() {
                     </CodeLine>
                     {commits !== null && (
                         <CodeLine n={4}>
-                            &nbsp;&nbsp;<Prop>commits</Prop>: <span className="tabular-nums text-[#F59E6C]">{shown}</span>,{" "}
+                            &nbsp;&nbsp;<Prop>commits</Prop>: <span className="tabular-nums text-[#F59E6C]">{shown.toLocaleString("nb-NO")}</span>,{" "}
                             <span className="text-[#4A5560]">{"// live via GitHub API"}</span>
                         </CodeLine>
                     )}
