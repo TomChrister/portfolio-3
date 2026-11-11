@@ -1,8 +1,33 @@
 import { ArrowRight, Briefcase, MapPin, Wrench } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 export default function Hero() {
     const { t } = useTranslation();
+    const [commits, setCommits] = useState<number | null>(null);
+
+    useEffect(() => {
+        fetch("/api/commits")
+            .then((r) => (r.ok ? r.json() : null))
+            .then((d) => d?.total && setCommits(d.total))
+            .catch(() => {});
+    }, []);
+
+    // Count up from 0 so the number reads as live data; skipped for reduced motion
+    const [shown, setShown] = useState(0);
+    useEffect(() => {
+        if (commits === null) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return setShown(commits);
+        const start = performance.now();
+        let frame = 0;
+        const tick = (now: number) => {
+            const p = Math.min((now - start) / 2500, 1);
+            setShown(Math.round(commits * (1 - (1 - p) ** 3)));
+            if (p < 1) frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(frame);
+    }, [commits]);
 
     return (
         <div className="mx-auto max-w-[950px] px-6 pb-10 pt-16">
@@ -46,7 +71,13 @@ export default function Hero() {
                     <CodeLine n={3}>
                         &nbsp;&nbsp;<Prop>location</Prop>: <Str>"Oslo, NO"</Str>,
                     </CodeLine>
-                    <CodeLine n={4}>{"};"}</CodeLine>
+                    {commits !== null && (
+                        <CodeLine n={4}>
+                            &nbsp;&nbsp;<Prop>commits</Prop>: <span className="tabular-nums text-[#F59E6C]">{shown}</span>,{" "}
+                            <span className="text-[#4A5560]">{"// live via GitHub API"}</span>
+                        </CodeLine>
+                    )}
+                    <CodeLine n={commits !== null ? 5 : 4}>{"};"}</CodeLine>
 
                     <h1 className="ml-0 mt-4 font-mono text-[28px] font-bold leading-tight tracking-tight text-ink sm:ml-10 sm:text-[44px]">
                         {t("hero.titleLine1")}

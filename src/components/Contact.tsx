@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const links = [
@@ -10,14 +9,6 @@ const links = [
 
 export default function Contact() {
   const { t } = useTranslation();
-  const [commits, setCommits] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch("/api/commits")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => d?.total && setCommits(d.total))
-      .catch(() => {});
-  }, []);
 
   return (
     <footer id="contact" className="border-t border-border py-14">
@@ -47,14 +38,6 @@ export default function Contact() {
             </a>
           ))}
         </div>
-
-        {commits !== null && (
-          <div className="mt-6 font-mono text-[13px] text-muted">
-            <span className="text-accent">tom@oslo</span> ~ %{" "}
-            <span className="text-ink">git log --all --author=tom | wc -l</span>
-            <div className="mt-1 text-ink">{commits.toLocaleString("nb-NO")} commits</div>
-          </div>
-        )}
 
         <div className="mt-8 font-mono text text-[#4A5560]">
           tcs.dev
