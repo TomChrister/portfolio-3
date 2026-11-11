@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
 import { Analytics } from '@vercel/analytics/react';
-import {SpeedInsights} from "@vercel/speed-insights/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
     const { i18n } = useTranslation();
@@ -26,8 +26,12 @@ export default function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/projects/:slug" element={<ProjectDetail/>}/>
             </Routes>
-            <Analytics/>
             <SpeedInsights/>
+            <Analytics
+                beforeSend={(event) => {
+                    if (localStorage.getItem("va-disable")) return null;
+                    return event
+                }}/>
         </div>
     );
 }
