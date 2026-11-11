@@ -14,3 +14,8 @@ dist-ssr/
 npm-debug.log*
 
 *.tsbuildinfo
+
+.agents
+.claude
+.agents/
+skills-lock.json
